@@ -1,0 +1,1 @@
+cmd_/home/goodvice/study/comp-arch/lab4/test1/hello1.ko := ccache arm-eabi-ld -r -EL -z noexecstack -T ./scripts/module-common.lds -T ./arch/arm/kernel/module.lds  --build-id  -o /home/goodvice/study/comp-arch/lab4/test1/hello1.ko /home/goodvice/study/comp-arch/lab4/test1/hello1.o /home/goodvice/study/comp-arch/lab4/test1/hello1.mod.o ;  true

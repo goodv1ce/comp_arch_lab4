@@ -1,14 +1,14 @@
-
 ifneq ($(KERNELRELEASE),)
-# kbuild part of makefile
-obj-m   := hello.o
-else
-# normal makefile
-KDIR ?= /lib/modules/`uname -r`/build
+obj-m := hello1.o hello2.o
 
+else
+KDIR := ~/repos/linux-stable
+CCFLAGS := -I$(PWD)/inc
 
 default:
-	$(MAKE) -C $(KDIR) M=$$PWD
+	$(MAKE) -C $(KDIR) M=$(PWD) modules EXTRA_CFLAGS="$(CCFLAGS)"
+
 clean:
-	$(MAKE) -C $(KDIR) M=$$PWD clean
+	$(MAKE) -C $(KDIR) M=$(PWD) clean
+
 endif
